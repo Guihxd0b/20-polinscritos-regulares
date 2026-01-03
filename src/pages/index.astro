@@ -1,105 +1,196 @@
 ---
-const title = "20 Polinscritos Regulares";
+const siteName = "20 Polinscritos Regulares";
+const pageTitle = `${siteName} — Site institucional (prévia)`;
+const subtitle =
+  "Projeto matemático dedicado ao estudo e à apresentação dos 20 Polinscritos Regulares, ampliando relações de inscrição regular entre formas geométricas tridimensionais, com linguagem acessível para leitura online e preservação do rigor conceitual.";
 ---
 
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={subtitle} />
     <style>
+      :root {
+        color-scheme: dark;
+      }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         background: #0b0f14;
         color: #eaeaf0;
       }
       header {
-        padding: 70px 20px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 22px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      header a {
+        color: #eaeaf0;
+        text-decoration: none;
+        opacity: 0.9;
+        font-weight: 600;
+      }
+      header nav {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      header nav a {
+        font-weight: 500;
+        opacity: 0.8;
+      }
+      header nav a:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 46px 20px 22px;
+      }
+      .hero {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 34px;
       }
       h1 {
-        font-size: 44px;
         margin: 0 0 10px;
+        font-size: clamp(34px, 4vw, 54px);
+        letter-spacing: -0.02em;
       }
-      p {
-        max-width: 860px;
-        margin: 0 auto;
+      .tagline {
+        margin: 0;
+        max-width: 78ch;
         line-height: 1.7;
-        opacity: 0.85;
         font-size: 18px;
+        opacity: 0.88;
       }
-      main {
-        padding: 60px 20px;
-        max-width: 1000px;
-        margin: auto;
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 22px;
       }
-      .grid {
-        display: grid;
-        gap: 18px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 16px;
-        padding: 24px;
-      }
-      .card h2 { margin-top: 0; }
       .btn {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
         border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.16);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         text-decoration: none;
         color: #eaeaf0;
-        opacity: 0.9;
+        font-weight: 650;
+        opacity: 0.95;
       }
-      .btn:hover { opacity: 1; background: rgba(255,255,255,0.06); }
-      @media (max-width: 900px){
-        .grid{ grid-template-columns: 1fr; }
+      .btn:hover {
+        opacity: 1;
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+      .btn.primary {
+        background: rgba(120, 160, 255, 0.14);
+        border-color: rgba(120, 160, 255, 0.28);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 16px;
+      }
+      .card {
+        grid-column: span 6;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+      .card p {
+        margin: 0;
+        line-height: 1.7;
+        opacity: 0.85;
+        font-size: 16px;
+      }
+
+      footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 22px 20px 40px;
+        opacity: 0.7;
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .card {
+          grid-column: span 12;
+        }
+        .hero {
+          padding: 22px;
+        }
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h1>20 Polinscritos Regulares</h1>
-      <p>
-        Empreendimento Cultural, Científico e Tecnológico dedicado à geometria tridimensional.
-        Após os cinco Poliedros Regulares de Platão, esta pesquisa apresenta um novo conjunto
-        de formas — os 20 Polinscritos Regulares — unindo ciência, arte e inovação.
-      </p>
+      <a href="/">{siteName}</a>
+      <nav>
+        <a href="/polinscritos">Os 20 Polinscritos</a>
+        <a href="/projeto">O Projeto</a>
+        <a href="/descoberta">A Descoberta</a>
+      </nav>
     </header>
 
     <main>
-      <div class="grid">
+      <section class="hero">
+        <h1>{siteName}</h1>
+        <p class="tagline">{subtitle}</p>
+
+        <div class="actions">
+          <a class="btn primary" href="/polinscritos">Acessar a lista completa</a>
+          <a class="btn" href="/projeto">Entender o projeto</a>
+          <a class="btn" href="/descoberta">Contexto da descoberta</a>
+        </div>
+      </section>
+
+      <section class="grid">
         <div class="card">
-          <h2>A Descoberta</h2>
+          <h2>Estrutura do site</h2>
           <p>
-            Contexto histórico e científico: dos poliedros regulares aos 20 Polinscritos Regulares.
+            Cada página apresenta um polinscrito regular com definição, características geométricas,
+            relações de construção e referências ao material base do projeto, adaptadas para leitura online.
           </p>
-          <a class="btn" href="/descoberta">Abrir</a>
         </div>
 
         <div class="card">
-          <h2>O Projeto</h2>
+          <h2>Versão de prévia</h2>
           <p>
-            Visão cultural e tecnológica: esculturas monumentais, educação, turismo e impacto social.
+            Esta é uma prévia institucional para validação de estrutura, nomenclatura e navegação.
+            O conteúdo será refinado progressivamente mantendo rigor científico e clareza.
           </p>
-          <a class="btn" href="/projeto">Abrir</a>
         </div>
-
-        <div class="card">
-          <h2>Os 20 Polinscritos</h2>
-          <p>
-            Uma página por forma, com descrição científica, galeria e preparação para visualização 3D.
-          </p>
-          <a class="btn" href="/polinscritos">Abrir</a>
-        </div>
-      </div>
+      </section>
     </main>
+
+    <footer>
+      <div>
+        Fonte: material institucional do projeto “20 Polinscritos Regulares” (adaptação para web).
+        <br />
+        Status: prévia para validação.
+      </div>
+    </footer>
   </body>
 </html>
