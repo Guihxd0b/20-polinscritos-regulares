@@ -1,0 +1,105 @@
+---
+const title = "20 Polinscritos Regulares";
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #0b0f14;
+        color: #eaeaf0;
+      }
+      header {
+        padding: 70px 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      h1 {
+        font-size: 44px;
+        margin: 0 0 10px;
+      }
+      p {
+        max-width: 860px;
+        margin: 0 auto;
+        line-height: 1.7;
+        opacity: 0.85;
+        font-size: 18px;
+      }
+      main {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .card h2 { margin-top: 0; }
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.16);
+        text-decoration: none;
+        color: #eaeaf0;
+        opacity: 0.9;
+      }
+      .btn:hover { opacity: 1; background: rgba(255,255,255,0.06); }
+      @media (max-width: 900px){
+        .grid{ grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>20 Polinscritos Regulares</h1>
+      <p>
+        Empreendimento Cultural, Científico e Tecnológico dedicado à geometria tridimensional.
+        Após os cinco Poliedros Regulares de Platão, esta pesquisa apresenta um novo conjunto
+        de formas — os 20 Polinscritos Regulares — unindo ciência, arte e inovação.
+      </p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <div class="card">
+          <h2>A Descoberta</h2>
+          <p>
+            Contexto histórico e científico: dos poliedros regulares aos 20 Polinscritos Regulares.
+          </p>
+          <a class="btn" href="/descoberta">Abrir</a>
+        </div>
+
+        <div class="card">
+          <h2>O Projeto</h2>
+          <p>
+            Visão cultural e tecnológica: esculturas monumentais, educação, turismo e impacto social.
+          </p>
+          <a class="btn" href="/projeto">Abrir</a>
+        </div>
+
+        <div class="card">
+          <h2>Os 20 Polinscritos</h2>
+          <p>
+            Uma página por forma, com descrição científica, galeria e preparação para visualização 3D.
+          </p>
+          <a class="btn" href="/polinscritos">Abrir</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
